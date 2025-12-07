@@ -3,192 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recomendaciones de Gadgets Amazon</title>
-<meta name="description" content="Descubre los mejores gadgets de Amazon, desde smartwatches hasta asistentes inteligentes, con precios y enlaces directos de compra.">
+<title>Amazon Moda</title>
 <style>
-/* --- Reset y estilos base --- */
-body { 
-  margin: 0; /* Sin margen por defecto */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
-  background: linear-gradient(135deg,#ffffff,#ff9900); /* Fondo degradado blanco a naranja */
-  color: #333e48; /* Color principal de texto (azul oscuro/gris) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg,#ffffff,#ff9900);
+  color: #333e48;
 }
-
-/* --- Estilos del header --- */
-header { 
-  background: linear-gradient(90deg, #ff9900, #333e48); /* Gradiente horizontal de naranja a azul oscuro */
-  color: #ffffff; /* Color del texto blanco */
-  text-align: center; /* Centrar texto */
-  padding: 3rem 1rem; /* Espaciado superior/inferior 3rem, lateral 1rem */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra sutil */
+header {
+  background: linear-gradient(90deg,#ff9900,#333e48);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem;
 }
-header h1 { 
-  margin: 0; /* Sin margen */
-  font-size: 3rem; /* Tamaño grande del título */
-  font-weight: bold; /* Texto en negrita */
+header h1 { margin:0; font-size:3rem; font-weight:bold;}
+header p { margin-top:0.5rem; font-size:1.3rem; opacity:0.9;}
+main {
+  max-width: 1300px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 2.5rem;
+  padding: 0 2rem;
 }
-header p { 
-  margin-top: 0.5rem; /* Separación superior */
-  font-size: 1.3rem; /* Tamaño del subtítulo */
-  opacity: 0.9; /* Ligera transparencia */
+.product-card {
+  background:#ffffff;
+  border-radius:15px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.12);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-/* --- Grid principal --- */
-main { 
-  max-width: 1300px; /* Ancho máximo */
-  margin: 3rem auto; /* Centrado vertical y horizontal */
-  display: grid; /* Grid para tarjetas */
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); /* Columnas responsivas */
-  gap: 2.5rem; /* Espaciado entre tarjetas */
-  padding: 0 2rem; /* Espaciado lateral */
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 }
-
-/* --- Tarjeta de producto --- */
-.product-card { 
-  background: #ffffff; /* Fondo blanco */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12); /* Sombra suave */
-  overflow: hidden; /* Oculta contenido que sobresalga */
-  display: flex; /* Flex para contenido vertical */
-  flex-direction: column; /* Contenido en columna */
-  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Animación hover */
+.product-card img {
+  width:100%;
+  max-height:400px;
+  object-fit:contain; /* Contain evita que se corte */
 }
-.product-card:hover { 
-  transform: scale(1.03); /* Escala al pasar el mouse */
-  box-shadow: 0 12px 24px rgba(0,0,0,0.18); /* Sombra más intensa */
+.product-content {
+  padding: 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.8rem;
 }
-
-/* --- Imagen de producto --- */
-.product-card img { 
-  width: 100%; /* Imagen ocupa todo el ancho */
-  height: 220px; /* Altura fija */
-  object-fit: cover; /* Ajusta la imagen */
-  transition: transform 0.3s ease; /* Animación hover imagen */
+.product-content h2 { margin:0; font-size:1.5rem; font-weight:600; color:#ff9900;}
+.product-content p { margin:0; font-size:1rem; line-height:1.5;}
+.buy-btn {
+  display:inline-block;
+  text-decoration:none;
+  background:linear-gradient(90deg,#ff9900,#333e48);
+  color:#ffffff;
+  padding:0.7rem 1rem;
+  border-radius:8px;
+  text-align:center;
+  font-weight:bold;
+  margin-top:1rem;
 }
-.product-card:hover img { 
-  transform: scale(1.05); /* Zoom suave al pasar el mouse */
+.buy-btn:hover {
+  opacity:0.85;
 }
-
-/* --- Contenido de producto --- */
-.product-content { 
-  padding: 1.5rem; /* Espaciado interno */
-  display: flex; /* Flexbox vertical */
-  flex-direction: column; /* Columna */
-  gap: 0.8rem; /* Separación entre elementos */
-  flex: 1; /* Ocupa espacio disponible */
+footer {
+  background-color:#333e48;
+  color:#ffffff;
+  text-align:center;
+  padding:1.5rem;
+  margin-top:3rem;
 }
-.product-content h2 { 
-  margin: 0; /* Sin margen */
-  font-size: 1.5rem; /* Tamaño del nombre del producto */
-  font-weight: 600; /* Semi-negrita */
-  color: #ff9900; /* Nombre del producto en naranja */
-}
-.product-content p { 
-  margin: 0; /* Sin margen */
-  font-size: 1rem; /* Tamaño del texto */
-  line-height: 1.5; /* Interlineado */
-}
-
-/* --- Botón de compra --- */
-.buy-btn { 
-  display: inline-block; /* Mostrar como botón */
-  text-decoration: none; /* Sin subrayado */
-  background: linear-gradient(90deg,#ff9900,#333e48); /* Degradado naranja-azul */
-  color: #ffffff; /* Texto blanco */
-  padding: 0.7rem 1rem; /* Espaciado interno */
-  border-radius: 8px; /* Bordes redondeados */
-  text-align: center; /* Centrar texto */
-  font-weight: bold; /* Texto en negrita */
-  margin-top: 1rem; /* Separación superior */
-  transition: opacity 0.2s, box-shadow 0.2s; /* Animación hover */
-}
-.buy-btn:hover { 
-  opacity: 0.85; /* Opacidad menor */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra al pasar el mouse */
-}
-
-/* --- Footer --- */
-footer { 
-  background-color: #333e48; /* Fondo azul oscuro */
-  color: #ffffff; /* Texto blanco */
-  text-align: center; /* Centrar texto */
-  padding: 1.5rem; /* Espaciado interno */
-  margin-top: 3rem; /* Separación superior */
-  font-size: 1rem; /* Tamaño de letra */
-  letter-spacing: 0.5px; /* Espaciado de letras */
-}
-
-/* --- Adaptaciones móviles --- */
-@media(max-width:600px){ 
-  main { 
-    padding: 0 1rem; /* Menor padding lateral */
-    gap: 1.5rem; /* Menor separación */
-  }
-  header h1 { font-size:2rem;} /* Ajuste tamaño título en móvil */
-  header p { font-size:1rem;} /* Ajuste tamaño subtítulo en móvil */
+@media(max-width:600px){
+  main { padding:0 1rem; gap:1.5rem;}
+  header h1 { font-size:2rem;}
+  header p { font-size:1rem;}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Gadgets Recomendados de Amazon</h1>
-  <p>Los mejores dispositivos tecnológicos para tu día a día</p>
+  <h1>Amazon Moda</h1>
+  <p>Compra las últimas tendencias en calzado</p>
 </header>
 
-<main role="main" id="product-container">
-  <!-- Las tarjetas se generarán dinámicamente aquí -->
+<main id="product-container">
+  <div class="product-card">
+    <img src="https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY575_.jpg" alt="Skechers Zapatos Servicio Médico">
+    <div class="product-content">
+      <h2>Skechers Zapatos Servicio Médico</h2>
+      <p>Cómodos y resistentes, ideales para profesionales del sector sanitario.</p>
+      <p>Precio: 64,99 €</p>
+      <a href="https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21" target="_blank" class="buy-btn" aria-label="Comprar Skechers Zapatos Servicio Médico en Amazon">Comprar en Amazon</a>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <p>&copy; 2025 Gadgets Recomendados | Afiliados Amazon</p>
+  <p>&copy; 2025 Amazon Moda | Afiliados Amazon</p>
 </footer>
-
-<script>
-/* --- Array de productos --- */
-const products = [
-  {
-    name: "Xiaomi Redmi Watch 5 Active",
-    description: "Smartwatch económico con buenas reseñas y funciones completas para el día a día.",
-    price: "52,50 €",
-    img: "https://m.media-amazon.com/images/I/51CR8ESr2rL._AC_SX679_.jpg",
-    link: "https://www.amazon.es/Pantalla-micr%C3%B3fonos-Altavoz-duraci%C3%B3n-Deportivos/dp/B0DJ3HWVXW?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3DV86YNOTIGBK&utm_source=chatgpt.com&tag=alexpunzi-21"
-  },
-  {
-    name: "Amazon Echo Show 5 (3ª gen)",
-    description: "Pantalla inteligente para el hogar. Controla tus dispositivos y obtén información al instante.",
-    price: "109,00 €",
-    img: "https://m.media-amazon.com/images/I/510SGWbuTCL._AC_SX679_.jpg",
-    link: "https://www.amazon.es/echo-show-5-3a-generacion/dp/B09B2S8WKD?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com&tag=alexpunzi-21"
-  },
-  {
-    name: "Amazon Echo Dot (5ª gen)",
-    description: "Altavoz inteligente compacto. Perfecto para empezar con la domótica y asistentes de voz.",
-    price: "64,99 €",
-    img: "https://images-na.ssl-images-amazon.com/images/I/61j3SEUjMJL._AC_SX679_.jpg",
-    link: "https://www.amazon.es/echo-dot-2022/dp/B09B8RF4PY?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com&tag=alexpunzi-21"
-  }
-];
-
-/* --- Seleccionamos el contenedor --- */
-const container = document.getElementById("product-container");
-
-/* --- Generamos tarjetas dinámicamente --- */
-products.forEach(product => {
-  const card = document.createElement("div"); // Creamos la tarjeta
-  card.className = "product-card"; // Asignamos clase
-  card.innerHTML = `
-    <img src="${product.img}" alt="${product.name}, ${product.description}" loading="lazy">
-    <div class="product-content">
-      <h2>${product.name}</h2>
-      <p>${product.description}</p>
-      <p>Precio: ${product.price}</p>
-      <a href="${product.link}" target="_blank" class="buy-btn" aria-label="Comprar ${product.name} en Amazon">Comprar en Amazon</a>
-    </div>
-  `;
-  container.appendChild(card); // Añadimos la tarjeta al contenedor
-});
-</script>
 
 </body>
 </html>
