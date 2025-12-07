@@ -1,149 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon Moda</title>
-<meta name="description" content="Compra las últimas tendencias en moda: calzado y complementos seleccionados.">
+<meta charset="UTF-8"> <!-- Definición de codificación UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hacer web responsive -->
+<title>Amazon Moda</title> <!-- Título de la pestaña -->
+<meta name="description" content="Descubre las últimas tendencias en moda: calzado y accesorios cuidadosamente seleccionados para ti."> <!-- Meta descripción para SEO -->
+
 <style>
+/* Reset y base */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ffffff, #ff9900);
-  color: #333e48;
+  margin: 0; /* Eliminar márgenes por defecto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+  background: linear-gradient(135deg, #ffffff, #ff9900); /* Fondo degradado */
+  color: #333e48; /* Color de texto principal */
+  line-height: 1.6; /* Altura de línea legible */
 }
+
+/* Header */
 header {
-  background: linear-gradient(90deg, #ff9900, #333e48);
-  color: #ffffff;
-  text-align: center;
-  padding: 3rem 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #ff9900, #333e48); /* Degradado del header */
+  color: #ffffff; /* Color de texto del header */
+  text-align: center; /* Centrar texto */
+  padding: 3rem 1rem; /* Espaciado interno */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra */
 }
-header h1 { margin:0; font-size:3rem; font-weight:bold; }
-header p { margin-top:0.5rem; font-size:1.3rem; opacity:0.9; }
+header h1 {
+  margin: 0; /* Sin margen superior/inferior */
+  font-size: clamp(2rem, 5vw, 3rem); /* Tamaño escalable */
+  font-weight: bold; /* Negrita */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Sombra para contraste */
+}
+header p {
+  margin-top: 0.5rem; /* Espaciado con h1 */
+  font-size: clamp(1rem, 2.5vw, 1.3rem); /* Tamaño escalable */
+  opacity: 0.9; /* Ligeramente transparente */
+}
 
+/* Main Grid */
 main {
-  max-width: 1300px;
-  margin: 3rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  padding: 0 2rem;
+  max-width: 1300px; /* Ancho máximo */
+  margin: 3rem auto; /* Centrado con margen vertical */
+  display: grid; /* Grid para tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
+  gap: 2.5rem; /* Espaciado entre tarjetas */
+  padding: 0 2rem; /* Padding lateral */
 }
 
+/* Tarjetas de producto */
 .product-card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra ligera */
+  overflow: hidden; /* Cortar contenido que sobresalga */
+  display: flex; /* Flexbox para contenido */
+  flex-direction: column; /* Colocar elementos verticalmente */
+  min-height: 450px; /* Altura mínima uniforme */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Animación suave al hover */
+  opacity: 0; /* Inicialmente invisible para animación */
+  transform: translateY(20px); /* Posición inicial para animación */
+  animation: fadeInUp 0.5s forwards; /* Animación de entrada */
 }
+
+/* Animación de entrada de las tarjetas */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); } /* Estado final de la animación */
+}
+
+/* Hover de la tarjeta */
 .product-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  transform: scale(1.03); /* Aumenta tamaño al pasar el cursor */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* Sombra más intensa al hover */
 }
 
+/* Imagen del producto */
 .product-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  width: 100%; /* Imagen ocupa todo el ancho */
+  height: 300px; /* Altura fija */
+  object-fit: cover; /* Ajuste proporcional sin deformar */
+  transition: transform 0.3s ease; /* Animación de zoom al hover */
 }
-.product-card img:hover {
-  transform: scale(1.05);
+.product-card:hover img {
+  transform: scale(1.05); /* Zoom de imagen al pasar el cursor */
 }
 
+/* Contenido de tarjeta */
 .product-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  padding: 1.5rem; /* Espaciado interno */
+  display: flex; /* Flex vertical */
+  flex-direction: column; 
+  gap: 0.8rem; /* Separación entre elementos */
 }
-.product-content h2 { margin:0; font-size:1.5rem; font-weight:600; color:#ff9900; }
-.product-content p { margin:0; font-size:1rem; line-height:1.5; }
+.product-content h2 {
+  margin:0; /* Sin margen */
+  font-size: 1.5rem; /* Tamaño de título */
+  font-weight: 600; /* Semi-negrita */
+  color:#ff9900; /* Color del título */
+  transition: color 0.3s ease; /* Transición de color al hover */
+}
+.product-card:hover .product-content h2 {
+  color: #ff6b6b; /* Cambia color del título al hover */
+}
+.product-content p { 
+  margin:0; /* Sin margen */
+  font-size:1rem; /* Tamaño de texto normal */
+  line-height:1.5; /* Espaciado entre líneas */
+}
 
+/* Precio destacado */
+.price {
+  color: #ff4757; /* Color rojo para destacar */
+  font-weight: bold; /* Negrita */
+  font-size: 1.1rem; /* Tamaño ligeramente mayor */
+}
+
+/* Botón de compra */
 .buy-btn {
-  display: inline-block;
-  text-decoration: none;
-  background: linear-gradient(90deg, #ff9900, #333e48);
-  color: #ffffff;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 1rem;
-  transition: opacity 0.2s, box-shadow 0.2s;
+  display: inline-block; /* Para poder aplicar padding */
+  text-decoration: none; /* Sin subrayado */
+  background: linear-gradient(90deg, #ff9900, #333e48); /* Degradado del botón */
+  color: #ffffff; /* Color de texto */
+  padding: 0.7rem 1rem; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  text-align: center; /* Centrar texto */
+  font-weight: bold; /* Negrita */
+  margin-top: 1rem; /* Separación de contenido anterior */
+  transition: opacity 0.2s, box-shadow 0.2s; /* Animación al hover */
 }
 .buy-btn:hover {
-  opacity: 0.85;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0.85; /* Opacidad al pasar cursor */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra al hover */
 }
 
+/* Focus para accesibilidad con teclado */
+a:focus {
+  outline: 3px dashed #ff9900; /* Resaltar botón con teclado */
+  outline-offset: 3px; 
+}
+
+/* Footer */
 footer {
-  background-color: #333e48;
-  color: #ffffff;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
+  background-color: #333e48; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  text-align: center; /* Centrar texto */
+  padding: 1.5rem; /* Espaciado interno */
+  margin-top: 3rem; /* Separación con main */
+  font-size: 1rem; /* Tamaño de texto */
+  letter-spacing: 0.5px; /* Espacio entre letras */
 }
 
+/* Responsive */
 @media(max-width:600px){
-  main { padding:0 1rem; gap:1.5rem; }
-  header h1 { font-size:2rem; }
-  header p { font-size:1rem; }
-  .product-card img { height: 250px; }
+  main { padding:0 1rem; gap:1.5rem; } /* Ajuste de grid en móviles */
+  header h1 { font-size:2rem; } /* Título más pequeño */
+  header p { font-size:1rem; } /* Subtítulo más pequeño */
+  .product-card img { height: 250px; } /* Imagen más pequeña */
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Amazon Moda</h1>
-  <p>Calzado y estilo — descubre nuestras recomendaciones</p>
+  <h1>Amazon Moda</h1> <!-- Título principal -->
+  <p>Explora las últimas tendencias en calzado y accesorios. Estilo, comodidad y elegancia en cada recomendación.</p> <!-- Subtítulo -->
 </header>
 
-<main id="product-container"></main>
+<main id="product-container" role="main"></main> <!-- Contenedor principal de productos -->
 
-<footer>
-  <p>&copy; 2025 Amazon Moda | Afiliados Amazon</p>
+<footer role="contentinfo">
+  <p>&copy; 2025 Amazon Moda | Afiliados Amazon</p> <!-- Pie de página -->
 </footer>
 
 <script>
+// Lista de productos
 const products = [
   {
-    name: "Skechers Zapatos Servicio Médico",
-    description: "Cómodos y resistentes, ideales para profesionales del sector sanitario.",
-    price: "64,99 €",
-    img: "https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY695_.jpg",
-    link: "https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21"
+    name: "Skechers Zapatos Servicio Médico", // Nombre producto
+    description: "Cómodos y resistentes, perfectos para profesionales del sector sanitario.", // Descripción
+    price: "64,99 €", // Precio
+    img: "https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY695_.jpg", // Imagen
+    link: "https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21" // Enlace de compra
   },
   {
     name: "PUMA Fashion Trainers Sneakers WHITE",
-    description: "Zapatillas deportivas de PUMA, cómodas y con estilo, perfectas para uso urbano.",
+    description: "Zapatillas deportivas de PUMA, cómodas y con estilo para tu día a día urbano.",
     price: "44,11 € (-26%)",
     img: "https://m.media-amazon.com/images/I/41PcY8duhuL._AC_SY675_.jpg",
     link: "https://www.amazon.es/PUMA-Fashion-Trainers-Sneakers-WHITE-PUMA/dp/B077MJHTSF?psc=1&tag=alexpunzi-21"
+  },
+  {
+    name: "LOVEVOOK Mochila Antirrobo 24-32L – Equipaje de Mano para Ryanair, Eurowings y Wizz Air",
+    description: "Mochila antirrobo LOVEVOOK de 24-32L, ligera y resistente, perfecta como equipaje de mano para Ryanair, Eurowings y Wizz Air, con cierres seguros y compartimentos para proteger tus pertenencias en cualquier viaje.",
+    price: "35,99 €",
+    img: "https://m.media-amazon.com/images/I/71JmL-WUolL._AC_SX679_.jpg",
+    link: "https://www.amazon.es/LOVEVOOK-Equipaje-40x30x20-Antirrobo-Eurowings/dp/B0DR1LL8SD/ref=sr_1_17?dib=eyJ2IjoiMSJ9.623yHso1wFylrIfehH0OtHfa1SunlIQziRHJMgNt4c_N46cA1bbKyjL1Vd44Fpyye6fph_rIAzn96RHHrUQReP18hBSUl-7VBzhV-ZKQtHljasb_MlYCpGWUAyrZ8FXdoyqwBxdoKI97YAGafd62mdjDHMnzl8txQtykCKoLLY2vcSbzXPY5MZ3GN_y-Fa5sKo66bjHYXM6M1Qpt015kxyLh5VR4Iu1UqzGgefZ90HY84k-xM_xsFL--Nx4zfY66fAXs2EU1CHX8AW8XokCKyDXAgWMEQOIBwL9HcblzmXk.PoKozHpJdNE5_P6jNQDjqGQShJTXIfZ5xBbD7QBGV0o&dib_tag=se&qid=1765089338&refinements=p_36%3A2493683031&rnid=2493681031&s=apparel&sr=1-17&th=1&psc=1"
   }
 ];
 
+// Contenedor de tarjetas
 const container = document.getElementById("product-container");
-products.forEach(product => {
-  const card = document.createElement("div");
-  card.className = "product-card";
+
+// Crear y añadir tarjetas al contenedor
+products.forEach((product, index) => {
+  const card = document.createElement("div"); // Crear div de tarjeta
+  card.className = "product-card"; // Asignar clase
+  card.style.animationDelay = `${index * 0.2}s`; // Retardo animación escalonado
   card.innerHTML = `
-    <img src="${product.img}" alt="${product.name}" loading="lazy">
+    <img src="${product.img}" alt="${product.name}" loading="lazy"> <!-- Imagen del producto -->
     <div class="product-content">
-      <h2>${product.name}</h2>
-      <p>${product.description}</p>
-      <p>Precio: ${product.price}</p>
-      <a href="${product.link}" target="_blank" class="buy-btn" aria-label="Comprar ${product.name} en Amazon">Comprar en Amazon</a>
+      <h2>${product.name}</h2> <!-- Nombre del producto -->
+      <p>${product.description}</p> <!-- Descripción -->
+      <p>Precio: <span class="price">${product.price}</span></p> <!-- Precio destacado -->
+      <a href="${product.link}" target="_blank" class="buy-btn" aria-label="Comprar ${product.name} en Amazon">Comprar</a> <!-- Botón CTA -->
     </div>
   `;
-  container.appendChild(card);
+  container.appendChild(card); // Añadir tarjeta al DOM
 });
 </script>
 
