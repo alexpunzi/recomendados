@@ -4,80 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amazon Moda</title>
+<meta name="description" content="Compra las últimas tendencias en moda: calzado y complementos seleccionados.">
 <style>
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg,#ffffff,#ff9900);
+  background: linear-gradient(135deg, #ffffff, #ff9900);
   color: #333e48;
 }
 header {
-  background: linear-gradient(90deg,#ff9900,#333e48);
+  background: linear-gradient(90deg, #ff9900, #333e48);
   color: #ffffff;
   text-align: center;
   padding: 3rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-header h1 { margin:0; font-size:3rem; font-weight:bold;}
-header p { margin-top:0.5rem; font-size:1.3rem; opacity:0.9;}
+header h1 { margin:0; font-size:3rem; font-weight:bold; }
+header p { margin-top:0.5rem; font-size:1.3rem; opacity:0.9; }
+
 main {
   max-width: 1300px;
   margin: 3rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
   padding: 0 2rem;
 }
+
 .product-card {
-  background:#ffffff;
-  border-radius:15px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.12);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .product-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
+
 .product-card img {
-  width:100%;
-  max-height:400px;
-  object-fit:contain; /* Contain evita que se corte */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
 .product-content {
   padding: 1.5rem;
-  display:flex;
-  flex-direction:column;
-  gap:0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
-.product-content h2 { margin:0; font-size:1.5rem; font-weight:600; color:#ff9900;}
-.product-content p { margin:0; font-size:1rem; line-height:1.5;}
+.product-content h2 { margin:0; font-size:1.5rem; font-weight:600; color:#ff9900; }
+.product-content p { margin:0; font-size:1rem; line-height:1.5; }
+
 .buy-btn {
-  display:inline-block;
-  text-decoration:none;
-  background:linear-gradient(90deg,#ff9900,#333e48);
-  color:#ffffff;
-  padding:0.7rem 1rem;
-  border-radius:8px;
-  text-align:center;
-  font-weight:bold;
-  margin-top:1rem;
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(90deg, #ff9900, #333e48);
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: opacity 0.2s, box-shadow 0.2s;
 }
 .buy-btn:hover {
-  opacity:0.85;
+  opacity: 0.85;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
 footer {
-  background-color:#333e48;
-  color:#ffffff;
-  text-align:center;
-  padding:1.5rem;
-  margin-top:3rem;
+  background-color: #333e48;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
+
 @media(max-width:600px){
-  main { padding:0 1rem; gap:1.5rem;}
-  header h1 { font-size:2rem;}
-  header p { font-size:1rem;}
+  main { padding:0 1rem; gap:1.5rem; }
+  header h1 { font-size:2rem; }
+  header p { font-size:1rem; }
+  .product-card img { height: 250px; }
 }
 </style>
 </head>
@@ -85,24 +103,49 @@ footer {
 
 <header>
   <h1>Amazon Moda</h1>
-  <p>Compra las últimas tendencias en calzado</p>
+  <p>Calzado y estilo — descubre nuestras recomendaciones</p>
 </header>
 
-<main id="product-container">
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY575_.jpg" alt="Skechers Zapatos Servicio Médico">
-    <div class="product-content">
-      <h2>Skechers Zapatos Servicio Médico</h2>
-      <p>Cómodos y resistentes, ideales para profesionales del sector sanitario.</p>
-      <p>Precio: 64,99 €</p>
-      <a href="https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21" target="_blank" class="buy-btn" aria-label="Comprar Skechers Zapatos Servicio Médico en Amazon">Comprar en Amazon</a>
-    </div>
-  </div>
-</main>
+<main id="product-container"></main>
 
 <footer>
   <p>&copy; 2025 Amazon Moda | Afiliados Amazon</p>
 </footer>
+
+<script>
+const products = [
+  {
+    name: "Skechers Zapatos Servicio Médico",
+    description: "Cómodos y resistentes, ideales para profesionales del sector sanitario.",
+    price: "64,99 €",
+    img: "https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY695_.jpg",
+    link: "https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21"
+  },
+  {
+    name: "PUMA Fashion Trainers Sneakers WHITE",
+    description: "Zapatillas deportivas de PUMA, cómodas y con estilo, perfectas para uso urbano.",
+    price: "44,11 € (-26%)",
+    img: "https://m.media-amazon.com/images/I/41PcY8duhuL._AC_SY675_.jpg",
+    link: "https://www.amazon.es/PUMA-Fashion-Trainers-Sneakers-WHITE-PUMA/dp/B077MJHTSF?psc=1&tag=alexpunzi-21"
+  }
+];
+
+const container = document.getElementById("product-container");
+products.forEach(product => {
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <img src="${product.img}" alt="${product.name}" loading="lazy">
+    <div class="product-content">
+      <h2>${product.name}</h2>
+      <p>${product.description}</p>
+      <p>Precio: ${product.price}</p>
+      <a href="${product.link}" target="_blank" class="buy-btn" aria-label="Comprar ${product.name} en Amazon">Comprar en Amazon</a>
+    </div>
+  `;
+  container.appendChild(card);
+});
+</script>
 
 </body>
 </html>
