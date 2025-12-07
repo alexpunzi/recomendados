@@ -7,83 +7,94 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f1f8ff);
       color: #333;
     }
     header {
-      background-color: #1a73e8;
+      background: linear-gradient(90deg, #1a73e8, #0059c9);
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: bold;
     }
     header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      opacity: 0.9;
     }
     main {
-      max-width: 1200px;
-      margin: 2rem auto;
+      max-width: 1300px;
+      margin: 3rem auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 0 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      padding: 0 2rem;
     }
     .product-card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .product-card:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
     }
     .product-card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
     }
     .product-content {
-      padding: 1rem;
-      flex: 1;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 0.8rem;
+      flex: 1;
     }
     .product-content h2 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.3rem;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a73e8;
     }
     .product-content p {
-      margin: 0.5rem 0;
-      flex: 1;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5;
     }
     .buy-btn {
       display: inline-block;
       text-decoration: none;
-      background-color: #1a73e8;
+      background: linear-gradient(90deg, #1a73e8, #0059c9);
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
       text-align: center;
-      transition: background-color 0.2s;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: opacity 0.2s;
     }
     .buy-btn:hover {
-      background-color: #155ab6;
+      opacity: 0.85;
     }
     footer {
-      background-color: #333;
+      background-color: #00264d;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
@@ -96,32 +107,32 @@
 
   <main>
     <div class="product-card">
-      <img src="https://m.media-amazon.com/images/I/51CR8ESr2rL._AC_SX679_.jpg" alt="Xiaomi Redmi Watch 5 Active">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71vVZ-JWfwL._AC_SL1500_.jpg" alt="Xiaomi Redmi Watch 5 Active">
       <div class="product-content">
         <h2>Xiaomi Redmi Watch 5 Active</h2>
         <p>Smartwatch económico con buenas reseñas y funciones completas para el día a día.</p>
         <p>Precio: 52,50 €</p>
-        <a href="https://www.amazon.es/Pantalla-micr%C3%B3fonos-Altavoz-duraci%C3%B3n-Deportivos/dp/B0DJ3HWVXW?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3DV86YNOTIGBK&utm_source=chatgpt.com" target="_blank" class="buy-btn">Comprar en Amazon</a>
+        <a href="https://www.amazon.es/Pantalla-micr%C3%B3fonos-Altavoz-duraci%C3%B3n-Deportivos/dp/B0DJ3HWVXW?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3DV86YNOTIGBK&utm_source=chatgpt.com&tag=alexpunzi-21" target="_blank" class="buy-btn">Comprar en Amazon</a>
       </div>
     </div>
 
     <div class="product-card">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/61pBv7FTp6L._AC_SL1000_.jpg" alt="Amazon Echo Show 5">
+      <img src="https://m.media-amazon.com/images/I/510SGWbuTCL._AC_SX679_.jpg" alt="Amazon Echo Show 5">
       <div class="product-content">
         <h2>Amazon Echo Show 5 (3ª gen)</h2>
         <p>Pantalla inteligente para el hogar. Controla tus dispositivos y obtén información al instante.</p>
         <p>Precio: 109,00 €</p>
-        <a href="https://www.amazon.es/echo-show-5-3a-generacion/dp/B09B2S8WKD?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com" target="_blank" class="buy-btn">Comprar en Amazon</a>
+        <a href="https://www.amazon.es/echo-show-5-3a-generacion/dp/B09B2S8WKD?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com&tag=alexpunzi-21" target="_blank" class="buy-btn">Comprar en Amazon</a>
       </div>
     </div>
 
     <div class="product-card">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/61uF5Xcfh5L._AC_SL1000_.jpg" alt="Amazon Echo Dot 5ª gen">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/61j3SEUjMJL._AC_SX679_.jpg" alt="Amazon Echo Dot 5ª gen">
       <div class="product-content">
         <h2>Amazon Echo Dot (5ª gen)</h2>
         <p>Altavoz inteligente compacto. Perfecto para empezar con la domótica y asistentes de voz.</p>
         <p>Precio: 64,99 €</p>
-        <a href="https://www.amazon.es/echo-dot-2022/dp/B09B8RF4PY?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com" target="_blank" class="buy-btn">Comprar en Amazon</a>
+        <a href="https://www.amazon.es/echo-dot-2022/dp/B09B8RF4PY?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1AT7YVPFBWXBL&language=es_ES&utm_source=chatgpt.com&tag=alexpunzi-21" target="_blank" class="buy-btn">Comprar en Amazon</a>
       </div>
     </div>
   </main>
