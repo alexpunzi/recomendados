@@ -24,11 +24,23 @@ header {
   padding: 3rem 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-header h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-header p { margin-top: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.3rem); opacity: 0.9; }
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+header p {
+  margin-top: 0.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  opacity: 0.9;
+}
 
 /* Filtros de categoría */
-.filters { text-align: center; margin-bottom: 2rem; }
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 .filters button {
   background: #ff9900;
   color: #fff;
@@ -40,7 +52,10 @@ header p { margin-top: 0.5rem; font-size: clamp(1rem, 2.5vw, 1.3rem); opacity: 0
   font-weight: bold;
   transition: background 0.3s;
 }
-.filters button:hover, .filters button.active { background: #ff6b6b; }
+.filters button:hover,
+.filters button.active {
+  background: #ff6b6b;
+}
 
 /* Main Grid */
 main {
@@ -64,26 +79,71 @@ main {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   opacity: 0;
   transform: translateY(20px);
+  position: relative;
 }
 .product-card:hover {
   transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0,0,0,0.15);
   background: #fff8f0;
 }
-.product-card img { width: 100%; height: 300px; object-fit: cover; transition: transform 0.3s ease; }
-.product-card:hover img { transform: scale(1.05); }
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Etiqueta oferta */
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4757;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  z-index: 1;
+}
 
 /* Contenido de tarjeta */
-.product-content { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
-.product-content h2 { margin:0; font-size: 1.5rem; font-weight: 600; color:#ff9900; transition: color 0.3s ease; }
-.product-card:hover .product-content h2 { color: #ff6b6b; }
-.product-content p { margin:0; font-size:1rem; line-height:1.5; }
-.price { color: #ff4757; font-weight: bold; font-size: 1.1rem; }
+.product-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.product-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff9900;
+  transition: color 0.3s ease;
+}
+.product-card:hover .product-content h2 {
+  color: #ff6b6b;
+}
+.product-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.price {
+  color: #ff4757;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
 
 /* Valoraciones */
-.stars { color: #ffcc00; font-size: 1rem; }
-/* Etiquetas de oferta */
-.tag { background: #ff4757; color: #fff; font-size: 0.8rem; font-weight: bold; padding: 0.3rem 0.5rem; border-radius: 5px; display: inline-block; }
+.stars {
+  color: #ffcc00;
+  font-size: 1rem;
+}
+
 /* Botón de compra */
 .buy-btn {
   display: inline-block;
@@ -97,22 +157,53 @@ main {
   margin-top: 1rem;
   transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
 }
-.buy-btn:hover { opacity: 0.85; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transform: translateY(-2px); }
+.buy-btn:hover {
+  opacity: 0.85;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
 
 /* Sticky button para móviles */
 @media(max-width:600px){
-  .buy-btn { position: sticky; bottom: 10px; width: calc(100% - 2rem); margin: 0 auto; text-align: center; }
-  main { padding:0 1rem; gap:1.5rem; }
-  header h1 { font-size:2rem; }
-  header p { font-size:1rem; }
-  .product-card img { height: 250px; }
+  .buy-btn {
+    position: sticky;
+    bottom: 10px;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    text-align: center;
+  }
+  main {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  .product-card img {
+    height: 250px;
+  }
 }
 
 /* Footer */
-footer { background-color: #333e48; color: #fff; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 1rem; letter-spacing: 0.5px; }
+footer {
+  background-color: #333e48;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
 
 /* Animación de fadeIn */
-.fade-in { opacity: 1 !important; transform: translateY(0) !important; transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 </style>
 </head>
 <body>
@@ -136,11 +227,11 @@ footer { background-color: #333e48; color: #fff; text-align: center; padding: 1.
 <main id="product-container" role="main"></main>
 
 <footer role="contentinfo">
-  <p>&copy; 2025 Amazon Moda | Afiliados Amazon</p>
+  <p>&copy; 2025 Amazon Moda | Sitio de Afiliados de Amazon</p>
 </footer>
 
 <script>
-// Combinamos productos originales y nuevos
+// Array de productos
 const products = [
   // Productos originales
   {
@@ -180,9 +271,9 @@ const products = [
     category: "zapatillas",
     rating: 5,
     tag: "Oferta limitada"
-   },
-   {
-    name: "Adidas Essentials French Terry 3-Stripes Sweatshirt Hombre (Pack de 1)",
+  },
+  {
+    name: "Adidas Essentials French Terry 3-Stripes Sweatshirt Hombre",
     description: "Sudadera cómoda y versátil con las clásicas 3 bandas de Adidas, ideal para uso diario.",
     price: "29,95 € (-40%)",
     img: "https://m.media-amazon.com/images/I/61kYeZLN4XL._AC_SX679_.jpg",
@@ -190,9 +281,9 @@ const products = [
     category: "ropa",
     rating: 5,
     tag: "Oferta limitada"
-   },
-   {
-    name: "Casio Collection, Reloj Analógico-Digital para Hombre",
+  },
+  {
+    name: "Casio Collection Reloj Analógico-Digital Hombre",
     description: "Reloj clásico analógico-digital, resistente y versátil, con estilo vintage y funcionalidad diaria.",
     price: "39,79 € (-3%)",
     img: "https://m.media-amazon.com/images/I/516JjHAaLOL._AC_SX679_.jpg",
@@ -200,72 +291,200 @@ const products = [
     category: "relojes",
     rating: 5,
     tag: "Más vendido"
-   },
-   {
+  },
+  {
     name: "EASTPAK OUT OF OFFICE Mochila",
-    description: "Mochila resistente y funcional, perfecta para trabajo, universidad o uso diario. Muy cómoda y con gran capacidad.",
+    description: "Mochila resistente y funcional, perfecta para trabajo, universidad o uso diario.",
     price: "51,58 € (-21%)",
     img: "https://m.media-amazon.com/images/I/81xiN1a9neL._AC_SY879_.jpg",
     link: "https://www.amazon.es/dp/B00O1XHJYW?tag=alexpunzi-21",
     category: "mochilas",
     rating: 5,
     tag: "Más vendido"
-   },
-   {
-    name: "Ray-Ban 4340 Gafas de sol Unisex adulto (Pack de 1)",
-    description: "Gafas de sol clásicas, elegantes y resistentes. Protección UV y estilo atemporal.",
-    price: "118,40 € (-17%)",
-    img: "https://m.media-amazon.com/images/I/413kxKNTbhL._AC_SX679_.jpg",
-    link: "https://www.amazon.es/dp/B071R57DZH?tag=alexpunzi-21",
+  },
+  {
+    name: "Ray-Ban RB4340 Wayfarer",
+    description: "Incluye estuche, lentes listas para prescripción, marco inspirado en el icónico Wayfarer con lentes de espejo degradado que aportan un estilo único.",
+    price: "163,91 €",
+    img: "https://m.media-amazon.com/images/I/51UEa9pmh6L._AC_SX679_.jpg",
+    link: "https://www.amazon.com/-/es/Ray-Ban-Rb4340-Wayfarer-Ease-cuadradas/dp/B071R57DZH?tag=alexpunzi-21",
     category: "accesorios",
     rating: 5
-   },
+  },
 
-  // Productos nuevos
-  { name:"Gafas de sol Ray-Ban", description:"Gafas de sol clásicas con protección UV y estilo atemporal.", price:"por buscar", img:"por buscar", link:"por buscar", category:"accesorios", rating:5 },
-  { name:"Botines Clarks", description:"Calzado elegante y cómodo, ideal para otoño e invierno.", price:"por buscar", img:"por buscar", link:"por buscar", category:"botines", rating:4, tag:"Oferta limitada" },
-  { name:"Calcetines Happy Socks", description:"Calcetines coloridos y divertidos, perfectos para un toque único.", price:"por buscar", img:"por buscar", link:"por buscar", category:"accesorios", rating:4 },
-  { name:"Zapatillas Puma RS-X", description:"Estilo moderno y comodidad para tus looks urbanos.", price:"por buscar", img:"por buscar", link:"por buscar", category:"zapatillas", rating:4 },
-  { name:"Chaqueta Levi's Denim", description:"Clásica chaqueta vaquera, duradera y a la moda.", price:"por buscar", img:"por buscar", link:"por buscar", category:"ropa", rating:5 },
-  { name:"Bolso Michael Kors Jet Set", description:"Bolso elegante y espacioso, perfecto para el día a día.", price:"por buscar", img:"por buscar", link:"por buscar", category:"bolsos", rating:5, tag:"Oferta limitada" },
-  { name:"Deportivas New Balance 574", description:"Comodidad y estilo para tus actividades diarias.", price:"por buscar", img:"por buscar", link:"por buscar", category:"zapatillas", rating:4 },
-  { name:"Camiseta Tommy Hilfiger Logo", description:"Camiseta casual con logo icónico, imprescindible en tu armario.", price:"por buscar", img:"por buscar", link:"por buscar", category:"ropa", rating:5 },
-  { name:"Reloj Daniel Wellington Classic", description:"Elegante reloj minimalista, combina con cualquier outfit.", price:"por buscar", img:"por buscar", link:"por buscar", category:"relojes", rating:5 },
-  { name:"Mochila Samsonite Laptop", description:"Resistente y con compartimentos ideales para portátil y accesorios.", price:"por buscar", img:"por buscar", link:"por buscar", category:"mochilas", rating:5 },
-  { name:"Gorra New Era 9FIFTY", description:"Gorra ajustable con estilo urbano y clásico.", price:"por buscar", img:"por buscar", link:"por buscar", category:"accesorios", rating:4 },
-  { name:"Botas Timberland Classic", description:"Botas robustas y de estilo icónico para temporada de frío.", price:"por buscar", img:"por buscar", link:"por buscar", category:"botines", rating:5, tag:"Oferta limitada" },
-  { name:"Zapatillas Converse Chuck Taylor", description:"Clásicas y cómodas, perfectas para todos los días.", price:"por buscar", img:"por buscar", link:"por buscar", category:"zapatillas", rating:5 },
-  { name:"Bufanda de lana Uniqlo", description:"Bufanda cálida y suave, esencial para invierno.", price:"por buscar", img:"por buscar", link:"por buscar", category:"accesorios", rating:4 },
-  { name:"Sudadera Nike Sportswear", description:"Sudadera cómoda y moderna, ideal para deporte y ocio.", price:"por buscar", img:"por buscar", link:"por buscar", category:"ropa", rating:4 },
-  { name:"Bolso Guess Crossbody", description:"Bolso elegante y práctico para uso diario.", price:"por buscar", img:"por buscar", link:"por buscar", category:"bolsos", rating:5 }
+  // Productos nuevos saneados (listos para completar)
+  {
+    name: "Clarks Emslie Warren Tacones Mujer",
+    description: "Tacones de cuero Clarks para mujer, con plantilla Ortholite, amortiguación suave, tacón de 2,16 pulgadas y detalles de botones.",
+    price: "51,51 € (-29%)",
+    img: "https://m.media-amazon.com/images/I/713en8SpBlL._AC_SX575_.jpg",
+    link: "https://www.amazon.com/-/es/Clarks-Tacones-Emslie-Warren-mujer/dp/B01N5ESUFU?tag=alexpunzi-21",
+    category: "botines",
+    rating: 5,
+    tag: "Oferta limitada"
+  },
+  {
+    name: "Happy Socks Pack 3 Clásicos",
+    description: "Talón y puntera reforzados para mayor durabilidad. Confeccionados en algodón peinado suave y resistente, cómodos y de ajuste regular. Lavables a máquina.",
+    price: "17,16 €",
+    img: "https://m.media-amazon.com/images/I/81LYt0TAWKL._AC_SX679_.jpg",
+    link: "www.amazon.com/-/es/Happy-Socks-Paquete-calcetines-clásicos/dp/B0FBBSXKTN/ref=sr_1_5?tag=alexpunzi-21",
+    category: "accesorios",
+    rating: 5
+  },
+  {
+    name: "Levi's Chamarra Camionero Hombre",
+    description: "Chaqueta vaquera clásica de Levi's, confeccionada en algodón con un toque de elastano para mayor comodidad. Ajuste regular, fácil cuidado y diseño inspirado en el estilo camionero.",
+    price: "53,77 € (-30%)",
+    img: "https://m.media-amazon.com/images/I/61H9t3DXhZL._AC_SX679_.jpg",
+    link: "https://www.amazon.com/-/es/Levis-Chamarra-camionero-tambi%C3%A9n-disponible/dp/B077TH4NG9?tag=alexpunzi-21",
+    category: "ropa",
+    rating: 5
+  },
+  {
+    name: "Michael Kors Jet Set - Bolso cruzado grande mujer",
+    description: "Bolso cruzado grande de cuero vacuno Michael Kors, con cierre de cremallera y acabado hecho a mano. Medidas: 6,25 pulgadas alto × 9,5 pulgadas ancho × 2,25 pulgadas profundidad.",
+    price: "51,32 €",
+    img: "https://m.media-amazon.com/images/I/71FbaNvQakL._AC_SY695_.jpg",
+    link: "https://www.amazon.com/-/es/Michael-bolsa-cruzada-mujer-Beige/dp/B00HQEUF6C?tag=alexpunzi-21",
+    category: "bolsos",
+    rating: 5,
+  },
+  {
+    name: "New Balance 574 Core – Zapatillas mujer",
+    description: "Entresuela ENCAP que combina espuma suave con borde de poliuretano para soporte todo el día. Empeine, cuello y lengüeta de malla 100% poliéster reciclado. Suela de caucho con 5% reciclado. Disponibles en tallas de ancho extendido.",
+    price: "81,53 € (-5%)",
+    img: "https://m.media-amazon.com/images/I/71zcEWO-ghL._AC_SY575_.jpg",
+    link: "https://www.amazon.com/-/es/New-Balance-Tenis-mujer-Blanco/dp/B093QLNJPG?tag=alexpunzi-21",
+    category: "zapatillas",
+    rating: 5
+  },
+  {
+    name: "Tommy Jeans Camiseta gráfica mujer — logo bandera",
+    description: "Camiseta de mujer de algodón 100% regenerativo, con logotipo gráfico de Tommy Hilfiger. Suave, transpirable y de ajuste regular, ideal para un estilo casual diario.",
+    price: "17,11 (-32%)",
+    img: "https://m.media-amazon.com/images/I/81snyS2gvEL._AC_SY550_.jpg",
+    link: "https://www.amazon.com/-/es/Camiseta-bandera-regular-marino-oscuro/dp/B0FGK2GHS7?tag=alexpunzi-21",
+    category: "ropa",
+    rating: 5
+  },
+  {
+    name: "Daniel Wellington Classic Sheffield",
+    description: "Reloj elegante y minimalista con caja de acero inoxidable de 1.417 in, movimiento de cuarzo japonés preciso, resistencia al agua 3 ATM y correa de cuero negro cómoda. Diseño sofisticado y versátil para uso diario o looks formales.",
+    price: "159,75 € (-15%)",
+    img: "https://m.media-amazon.com/images/I/51-bX4XfkCL._AC_SY741_.jpg",
+    link: "https://www.amazon.com/-/es/Wellington-Sheffield-movimiento-clásicos-plateado/dp/B01LYR5QV8?tag=alexpunzi-21",
+    category: "relojes",
+    rating: 4
+  },
+  {
+    name: "Mochila Samsonite Laptop",
+    description: "Resistente y con compartimentos ideales para portátil y accesorios.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Mochila+Samsonite",
+    link: "#",
+    category: "mochilas",
+    rating: 5
+  },
+  {
+    name: "Gorra New Era 9FIFTY",
+    description: "Gorra ajustable con estilo urbano y clásico.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=New+Era+9FIFTY",
+    link: "#",
+    category: "accesorios",
+    rating: 4
+  },
+  {
+    name: "Botas Timberland Classic",
+    description: "Botas robustas y de estilo icónico para la temporada de frío.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Timberland+Classic",
+    link: "#",
+    category: "botines",
+    rating: 5,
+    tag: "Oferta limitada"
+  },
+  {
+    name: "Zapatillas Converse Chuck Taylor",
+    description: "Clásicas y cómodas, perfectas para el día a día.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Converse+Chuck+Taylor",
+    link: "#",
+    category: "zapatillas",
+    rating: 5
+  },
+  {
+    name: "Bufanda de lana Uniqlo",
+    description: "Bufanda cálida y suave, esencial para invierno.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Bufanda+Uniqlo",
+    link: "#",
+    category: "accesorios",
+    rating: 4
+  },
+  {
+    name: "Sudadera Nike Sportswear",
+    description: "Sudadera cómoda y moderna, ideal para deporte y ocio.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Sudadera+Nike",
+    link: "#",
+    category: "ropa",
+    rating: 4
+  },
+  {
+    name: "Bolso Guess Crossbody",
+    description: "Bolso elegante y práctico para uso diario.",
+    price: "Consultar precio actualizado en Amazon",
+    img: "https://via.placeholder.com/600x400?text=Guess+Crossbody",
+    link: "#",
+    category: "bolsos",
+    rating: 5
+  }
 ];
 
-// Función para renderizar productos con filtros
-function renderProducts(filter="all"){
+// Render de productos con filtro
+function renderProducts(filter = "all") {
   const container = document.getElementById("product-container");
   container.innerHTML = "";
-  products.filter(p => filter==="all" || p.category===filter).forEach((product, index) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    card.innerHTML = `
-      ${product.tag ? `<span class="tag">${product.tag}</span>` : ''}
-      <img src="${product.img}" alt="${product.name}" loading="lazy">
-      <div class="product-content">
-        <h2>${product.name}</h2>
-        <p>${product.description}</p>
-        <p>Precio: <span class="price">${product.price}</span></p>
-        <p class="stars">${'⭐'.repeat(product.rating)}${'☆'.repeat(5-product.rating)}</p>
-        <a href="${product.link}" target="_blank" class="buy-btn" aria-label="Comprar ${product.name} en Amazon">Comprar</a>
-      </div>
-    `;
-    container.appendChild(card);
-  });
+
+  products
+    .filter(p => filter === "all" || p.category === filter)
+    .forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      card.innerHTML = `
+        ${product.tag ? `<span class="tag">${product.tag}</span>` : ""}
+        <img src="${product.img}" alt="${product.name}" loading="lazy">
+        <div class="product-content">
+          <h2>${product.name}</h2>
+          <p>${product.description}</p>
+          <p>Precio: <span class="price">${product.price}</span></p>
+          <p class="stars">${"⭐".repeat(product.rating)}${"☆".repeat(5 - product.rating)}</p>
+          <a href="${product.link}" target="_blank" rel="noopener noreferrer"
+             class="buy-btn" aria-label="Consultar ${product.name} en Amazon">
+             Ver oferta en Amazon
+          </a>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
 
   // Animación progresiva
-  const cards = document.querySelectorAll('.product-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('fade-in'); } });
-  }, { threshold: 0.2 });
+  const cards = document.querySelectorAll(".product-card");
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
   cards.forEach(card => observer.observe(card));
 }
 
@@ -273,10 +492,10 @@ function renderProducts(filter="all"){
 renderProducts();
 
 // Filtro de categorías
-document.querySelectorAll('.filters button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+document.querySelectorAll(".filters button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
     renderProducts(btn.dataset.category);
   });
 });
