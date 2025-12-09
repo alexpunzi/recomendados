@@ -10,30 +10,33 @@
 /* Reset y base */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ffffff, #ff9900);
-  color: #333e48;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 10% 20%, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
   line-height: 1.6;
 }
 
-/* Header */
+/* Header futurista */
 header {
-  background: linear-gradient(90deg, #ff9900, #333e48);
+  background: linear-gradient(135deg, #00ffff, #ff00ff);
   color: #fff;
   text-align: center;
   padding: 3rem 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff;
+  border-bottom: 2px solid #00ffff;
 }
 header h1 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
+  letter-spacing: 1px;
 }
 header p {
   margin-top: 0.5rem;
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   opacity: 0.9;
+  text-shadow: 0 0 6px #00ffff;
 }
 
 /* Filtros de categoría */
@@ -42,19 +45,21 @@ header p {
   margin-bottom: 2rem;
 }
 .filters button {
-  background: #ff9900;
-  color: #fff;
-  border: none;
+  background: #1a1a2e;
+  color: #00ffff;
+  border: 1px solid #00ffff;
   padding: 0.5rem 1rem;
   margin: 0 0.3rem;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 .filters button:hover,
 .filters button.active {
-  background: #ff6b6b;
+  background: #00ffff;
+  color: #1a1a2e;
+  box-shadow: 0 0 12px #00ffff, 0 0 20px #ff00ff;
 }
 
 /* Main Grid */
@@ -67,11 +72,12 @@ main {
   padding: 0 2rem;
 }
 
-/* Tarjetas de producto */
+/* Tarjetas de producto futuristas */
 .product-card {
-  background: #fff;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #00ffff;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,255,255,0.3), 0 0 40px rgba(255,0,255,0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -82,18 +88,19 @@ main {
   position: relative;
 }
 .product-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  background: #fff8f0;
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff;
 }
 .product-card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(1.1);
 }
 .product-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(1deg);
+  filter: brightness(1.2);
 }
 
 /* Etiqueta oferta */
@@ -101,13 +108,14 @@ main {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #ff4757;
+  background: #ff00ff;
   color: #fff;
   font-size: 0.8rem;
   font-weight: bold;
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
   z-index: 1;
+  text-shadow: 0 0 5px #fff;
 }
 
 /* Contenido de tarjeta */
@@ -121,11 +129,13 @@ main {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ff9900;
-  transition: color 0.3s ease;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .product-card:hover .product-content h2 {
-  color: #ff6b6b;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 15px #00ffff;
 }
 .product-content p {
   margin: 0;
@@ -133,34 +143,37 @@ main {
   line-height: 1.5;
 }
 .price {
-  color: #ff4757;
+  color: #ff00ff;
   font-weight: bold;
   font-size: 1.1rem;
+  text-shadow: 0 0 6px #ff00ff;
 }
 
 /* Valoraciones */
 .stars {
-  color: #ffcc00;
+  color: #00ffff;
   font-size: 1rem;
+  text-shadow: 0 0 3px #00ffff;
 }
 
 /* Botón de compra */
 .buy-btn {
   display: inline-block;
   text-decoration: none;
-  background: linear-gradient(90deg, #ff9900, #333e48);
-  color: #fff;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  color: #1a1a2e;
   padding: 0.7rem 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   font-weight: bold;
   margin-top: 1rem;
-  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px #00ffff, 0 0 20px #ff00ff;
 }
 .buy-btn:hover {
-  opacity: 0.85;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+  opacity: 1;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #fff;
 }
 
 /* Sticky button para móviles */
@@ -187,15 +200,16 @@ main {
   }
 }
 
-/* Footer */
+/* Footer futurista */
 footer {
-  background-color: #333e48;
-  color: #fff;
+  background-color: #1a1a2e;
+  color: #00ffff;
   text-align: center;
   padding: 1.5rem;
   margin-top: 3rem;
   font-size: 1rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff inset;
 }
 
 /* Animación de fadeIn */
@@ -205,6 +219,7 @@ footer {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 </style>
+
 </head>
 <body>
 
