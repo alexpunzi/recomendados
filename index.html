@@ -397,8 +397,9 @@ footer p {
   <button data-category="relojes">⌚ Relojes</button>
   <button data-category="accesorios">🕶️ Accesorios</button>
   <button data-category="botines">👢 Botines</button>
-  <!-- NUEVA CATEGORÍA AÑADIDA: Hogar -->
   <button data-category="hogar">🏠 Hogar</button>
+  <!-- NUEVA CATEGORÍA AÑADIDA: Tecnología -->
+  <button data-category="tecnologia">🖥️ Tecnología</button>
 </div>
 
 <main id="product-container" role="main"></main>
@@ -527,15 +528,27 @@ const products = [
   },
   {
     name: "Oral-B iO Series 3 Deep Clean – Cepillo eléctrico recargable con sensor de presión",
-    description: "Cepillo de dientes eléctrico recargable de la serie iO de Oral-B. Tecnología avanzada que elimina un 100% más de placa* y protege las encías con un sensor de presión inteligente (luces verde/blanco/rojo). Incluye 3 modos de limpieza, temporizador y estuche de viaje. *vs. un cepillo manual.",
+    description: "Cepillo de dientes eléctrico recargable de la serie iO de Oral-B. Tecnología avanzada que elimina un 100% más de placa y protege las encías con un sensor de presión inteligente (luces verde/blanco/rojo). Incluye 3 modos de limpieza, temporizador y estuche de viaje. vs. un cepillo manual.",
     price: "51,09 €",
     originalPrice: "92,90 €", // Precio estimado antes del descuento
     discount: "-45%",
     img: "https://m.media-amazon.com/images/I/71jDBVInB0L._AC_SX679_.jpg",
     link: "https://www.amazon.com/Oral-B-iO-Deep-Clean-recargable/dp/B0B5HRWH1S?tag=alexpunzi-21",
-    category: "hogar", // CATEGORÍA MODIFICADA: ahora es "hogar"
-    rating: 5, // Basado en reseñas positivas
+    category: "hogar",
+    rating: 5,
     tag: "SUPER OFERTA"
+  },
+  {
+    name: "Samsung Galaxy Tab A9+ 11” (64 GB) – Tablet Android con altavoces cuádruples",
+    description: "Tablet Android de 11\" con pantalla FHD+ de 90Hz, procesador Snapdragon 695 5G, 64GB de almacenamiento, altavoces cuádruples con Dolby Atmos, batería de larga duración y diseño premium. Perfecta para entretenimiento y productividad.",
+    price: "119,23 €",
+    originalPrice: "185,00 €", // Precio estimado antes del descuento
+    discount: "-36%",
+    img: "https://m.media-amazon.com/images/I/61d46oYQgdL._AC_SX466_.jpg",
+    link: "https://www.amazon.com/dp/B0CLF3VPMV?tag=alexpunzi-21",
+    category: "tecnologia", // NUEVA CATEGORÍA
+    rating: 4,
+    tag: "OFERTA"
   }
 ];
 
