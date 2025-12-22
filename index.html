@@ -6,6 +6,10 @@
 <title>Ofertas Amazon</title>
 <meta name="description" content="Las mejores ofertas de Amazon en un solo lugar. ¡Ahorra en moda, electrónica y mucho más!">
 
+<!-- Ícono de la página -->
+<link rel="icon" href="ofertasAmazon_logo5.ico" type="image/x-icon">
+<link rel="shortcut icon" href="ofertasAmazon_logo5.ico" type="image/x-icon">
+
 <style>
 /* Reset y base */
 body {
@@ -16,12 +20,12 @@ body {
   line-height: 1.6;
 }
 
-/* Header con tema amarillo/negro */
+/* Header con tema amarillo/negro y logo */
 header {
   background: linear-gradient(135deg, #000000 0%, #333333 50%, #000000 100%);
   color: #FFD700;
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 1.5rem 1rem 2rem;
   border-bottom: 4px solid #FFD700;
   box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
   position: relative;
@@ -36,7 +40,40 @@ header::before {
   height: 4px;
   background: linear-gradient(90deg, transparent, #FFD700, transparent);
 }
-header h1 {
+
+/* Contenedor del logo y título */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  height: 80px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Título */
+.site-title {
+  flex: 1;
+  min-width: 300px;
+}
+.site-title h1 {
   margin: 0;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
@@ -45,7 +82,7 @@ header h1 {
   position: relative;
   display: inline-block;
 }
-header h1::after {
+.site-title h1::after {
   content: "⚡";
   position: absolute;
   top: -10px;
@@ -54,13 +91,10 @@ header h1::after {
   color: #FFD700;
   animation: sparkle 2s infinite;
 }
-header p {
+.site-title p {
   margin-top: 0.8rem;
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: #FFE44D;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @keyframes sparkle {
@@ -236,7 +270,18 @@ main {
 }
 
 /* Sticky button para móviles */
-@media(max-width:600px){
+@media(max-width:768px){
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .logo {
+    height: 60px;
+  }
+  .site-title {
+    min-width: unset;
+  }
   .buy-btn {
     position: sticky;
     bottom: 10px;
@@ -248,10 +293,10 @@ main {
     padding: 0 1rem;
     gap: 1.5rem;
   }
-  header h1 {
+  .site-title h1 {
     font-size: 2rem;
   }
-  header p {
+  .site-title p {
     font-size: 1rem;
   }
   .product-card img {
@@ -260,6 +305,19 @@ main {
   .filters button {
     padding: 0.5rem 0.8rem;
     font-size: 0.85rem;
+  }
+}
+
+@media(max-width:480px){
+  .logo {
+    height: 50px;
+  }
+  .site-title h1 {
+    font-size: 1.8rem;
+  }
+  .site-title h1::after {
+    font-size: 1.2rem;
+    right: -20px;
   }
 }
 
@@ -292,6 +350,18 @@ footer p {
   margin-top: 0.5rem;
 }
 
+/* Logo en el footer */
+.footer-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.footer-logo img {
+  height: 20px;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(84%) sepia(98%) saturate(7492%) hue-rotate(359deg) brightness(105%) contrast(107%);
+}
+
 /* Animación de fadeIn */
 .fade-in {
   opacity: 1 !important;
@@ -304,8 +374,15 @@ footer p {
 <body>
 
 <header>
-  <h1>Ofertas Amazon</h1>
-  <p>Descubre las mejores ofertas y descuentos exclusivos en productos de Amazon. ¡Ahorra en moda, tecnología y más!</p>
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="ofertasAmazon_logo5.png" alt="Logo Ofertas Amazon" class="logo">
+    </div>
+    <div class="site-title">
+      <h1>Ofertas Amazon</h1>
+      <p>Descubre las mejores ofertas y descuentos exclusivos en productos de Amazon. ¡Ahorra en moda, tecnología y más!</p>
+    </div>
+  </div>
 </header>
 
 <div class="offer-counter">
@@ -325,7 +402,13 @@ footer p {
 <main id="product-container" role="main"></main>
 
 <footer role="contentinfo">
-  <p>&copy; 2025 Ofertas Amazon | Sitio de Afiliados</p>
+  <p>
+    &copy; 2025 
+    <span class="footer-logo">
+      <img src="ofertasAmazon_logo5.png" alt="Logo Ofertas Amazon">
+    </span>
+    Ofertas Amazon | Sitio de Afiliados
+  </p>
   <p class="disclaimer">Este sitio contiene enlaces de afiliado a Amazon. Podemos recibir una comisión por compras realizadas a través de estos enlaces.</p>
 </footer>
 
