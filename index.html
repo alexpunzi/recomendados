@@ -3,177 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon Moda</title>
-<meta name="description" content="Descubre las últimas tendencias en moda: calzado y accesorios cuidadosamente seleccionados para ti.">
+<title>Ofertas Amazon</title>
+<meta name="description" content="Las mejores ofertas de Amazon en un solo lugar. ¡Ahorra en moda, electrónica y mucho más!">
 
 <style>
 /* Reset y base */
 body {
   margin: 0;
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at 10% 20%, #0f0c29, #302b63, #24243e);
-  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #f0f0f0;
   line-height: 1.6;
 }
 
-/* Header futurista */
+/* Header con tema amarillo/negro */
 header {
-  background: linear-gradient(135deg, #00ffff, #ff00ff);
-  color: #fff;
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #000000 100%);
+  color: #FFD700;
   text-align: center;
-  padding: 3rem 1rem;
-  box-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff;
-  border-bottom: 2px solid #00ffff;
+  padding: 2.5rem 1rem;
+  border-bottom: 4px solid #FFD700;
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
 }
 header h1 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: bold;
-  text-shadow: 0 0 8px #00ffff, 0 0 12px #ff00ff;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
   letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+header h1::after {
+  content: "⚡";
+  position: absolute;
+  top: -10px;
+  right: -25px;
+  font-size: 1.5rem;
+  color: #FFD700;
+  animation: sparkle 2s infinite;
 }
 header p {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   font-size: clamp(1rem, 2.5vw, 1.3rem);
-  opacity: 0.9;
-  text-shadow: 0 0 6px #00ffff;
+  color: #FFE44D;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
 }
 
 /* Filtros de categoría */
 .filters {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
 }
 .filters button {
-  background: #1a1a2e;
-  color: #00ffff;
-  border: 1px solid #00ffff;
-  padding: 0.5rem 1rem;
-  margin: 0 0.3rem;
-  border-radius: 10px;
+  background: #000000;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
-.filters button:hover,
+.filters button:hover {
+  background: #FFD700;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
 .filters button.active {
-  background: #00ffff;
-  color: #1a1a2e;
-  box-shadow: 0 0 12px #00ffff, 0 0 20px #ff00ff;
+  background: #FFD700;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+  font-weight: 800;
 }
 
 /* Main Grid */
 main {
   max-width: 1300px;
-  margin: 3rem auto;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  padding: 0 2rem;
+  gap: 2rem;
+  padding: 0 1.5rem;
 }
 
-/* Tarjetas de producto futuristas */
+/* Tarjetas de producto amarillo/negro */
 .product-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #00ffff;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,255,255,0.3), 0 0 40px rgba(255,0,255,0.2);
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 480px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 450px;
+  transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   position: relative;
 }
 .product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px #00ffff, 0 0 60px #ff00ff;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+  border-color: #FFE44D;
 }
 .product-card img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: brightness(1.1);
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid #FFD700;
 }
 .product-card:hover img {
-  transform: scale(1.08) rotate(1deg);
-  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 /* Etiqueta oferta */
 .tag {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ff00ff;
-  color: #fff;
+  top: 12px;
+  left: 12px;
+  background: #FF0000;
+  color: #FFFFFF;
   font-size: 0.8rem;
   font-weight: bold;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
   z-index: 1;
-  text-shadow: 0 0 5px #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Contenido de tarjeta */
 .product-content {
-  padding: 1.5rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  flex-grow: 1;
 }
 .product-content h2 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-.product-card:hover .product-content h2 {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff, 0 0 15px #00ffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFD700;
+  min-height: 3.5rem;
 }
 .product-content p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.5;
+  color: #CCCCCC;
+  flex-grow: 1;
 }
 .price {
-  color: #ff00ff;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-shadow: 0 0 6px #ff00ff;
+  color: #FFD700;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+.original-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
 }
 
 /* Valoraciones */
 .stars {
-  color: #00ffff;
-  font-size: 1rem;
-  text-shadow: 0 0 3px #00ffff;
+  color: #FFD700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
 }
 
 /* Botón de compra */
 .buy-btn {
   display: inline-block;
   text-decoration: none;
-  background: linear-gradient(90deg, #00ffff, #ff00ff);
-  color: #1a1a2e;
-  padding: 0.7rem 1rem;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
   text-align: center;
-  font-weight: bold;
-  margin-top: 1rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 0 12px #00ffff, 0 0 20px #ff00ff;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
 }
 .buy-btn:hover {
-  opacity: 1;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #fff;
+  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Contador de ofertas */
+.offer-counter {
+  text-align: center;
+  color: #FFD700;
+  font-weight: bold;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+.offer-counter span {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #FFD700;
 }
 
 /* Sticky button para móviles */
@@ -182,7 +241,7 @@ main {
     position: sticky;
     bottom: 10px;
     width: calc(100% - 2rem);
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
   }
   main {
@@ -196,20 +255,41 @@ main {
     font-size: 1rem;
   }
   .product-card img {
-    height: 250px;
+    height: 220px;
+  }
+  .filters button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
-/* Footer futurista */
+/* Footer */
 footer {
-  background-color: #1a1a2e;
-  color: #00ffff;
+  background-color: #000000;
+  color: #FFD700;
   text-align: center;
   padding: 1.5rem;
   margin-top: 3rem;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff inset;
+  font-size: 0.9rem;
+  border-top: 2px solid #FFD700;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+footer p {
+  margin: 0.3rem 0;
+}
+.disclaimer {
+  font-size: 0.8rem;
+  color: #AAAAAA;
+  margin-top: 0.5rem;
 }
 
 /* Animación de fadeIn */
@@ -224,148 +304,189 @@ footer {
 <body>
 
 <header>
-  <h1>Amazon Moda</h1>
-  <p>Explora las últimas tendencias en calzado y accesorios. Estilo, comodidad y elegancia en cada recomendación.</p>
+  <h1>Ofertas Amazon</h1>
+  <p>Descubre las mejores ofertas y descuentos exclusivos en productos de Amazon. ¡Ahorra en moda, tecnología y más!</p>
 </header>
 
+<div class="offer-counter">
+  <span id="offer-count">Cargando ofertas...</span>
+</div>
+
 <div class="filters">
-  <button data-category="all" class="active">Todos</button>
-  <button data-category="zapatillas">Zapatillas</button>
-  <button data-category="mochilas">Mochilas</button>
-  <button data-category="ropa">Ropa</button>
-  <button data-category="relojes">Relojes</button>
-  <button data-category="accesorios">Accesorios</button>
-  <button data-category="botines">Botines</button>
+  <button data-category="all" class="active">Todas las ofertas</button>
+  <button data-category="zapatillas">👟 Zapatillas</button>
+  <button data-category="mochilas">🎒 Mochilas</button>
+  <button data-category="ropa">👕 Ropa</button>
+  <button data-category="relojes">⌚ Relojes</button>
+  <button data-category="accesorios">🕶️ Accesorios</button>
+  <button data-category="botines">👢 Botines</button>
 </div>
 
 <main id="product-container" role="main"></main>
 
 <footer role="contentinfo">
-  <p>&copy; 2025 Amazon Moda | Sitio de Afiliados de Amazon</p>
+  <p>&copy; 2025 Ofertas Amazon | Sitio de Afiliados</p>
+  <p class="disclaimer">Este sitio contiene enlaces de afiliado a Amazon. Podemos recibir una comisión por compras realizadas a través de estos enlaces.</p>
 </footer>
 
 <script>
-// Array de productos
+// Array de productos con información de precios originales para mostrar descuentos
 const products = [
-  // Productos originales
   {
     name: "Skechers Zapatos Servicio Médico",
     description: "Cómodos y resistentes, perfectos para profesionales del sector sanitario.",
-    price: "53,00 € (-24%)",
+    price: "53,00 €",
+    originalPrice: "69,99 €",
+    discount: "-24%",
     img: "https://m.media-amazon.com/images/I/613g6kW5emL._AC_SY695_.jpg",
     link: "https://www.amazon.es/Skechers-Zapatos-Servicio-m%C3%A9dico-Synthetic/dp/B0DZJX27S5?psc=1&tag=alexpunzi-21",
     category: "zapatillas",
     rating: 4,
-    tag: "Oferta"
+    tag: "OFERTA"
   },
   {
     name: "PUMA Fashion Trainers Sneakers WHITE",
     description: "Zapatillas deportivas de PUMA, cómodas y con estilo para tu día a día urbano.",
-    price: "41,20 € (-31%)",
+    price: "41,20 €",
+    originalPrice: "59,99 €",
+    discount: "-31%",
     img: "https://m.media-amazon.com/images/I/41PcY8duhuL._AC_SY675_.jpg",
     link: "https://www.amazon.es/PUMA-Fashion-Trainers-Sneakers-WHITE-PUMA/dp/B077MJHTSF?psc=1&tag=alexpunzi-21",
     category: "zapatillas",
     rating: 5,
-    tag: "Oferta"
+    tag: "TOP VENTAS"
   },
   {
     name: "LOVEVOOK Mochila Antirrobo 24-32L",
     description: "Mochila antirrobo LOVEVOOK de 24-32L, ligera y resistente, perfecta como equipaje de mano.",
     price: "35,99 €",
+    originalPrice: "44,99 €",
+    discount: "-20%",
     img: "https://m.media-amazon.com/images/I/71JmL-WUolL._AC_SX679_.jpg",
     link: "https://www.amazon.es/LOVEVOOK-Equipaje-40x30x20-Antirrobo-Eurowings/dp/B0DR1LL8SD?tag=alexpunzi-21",
     category: "mochilas",
-    rating: 4
+    rating: 4,
+    tag: "OFERTA"
   },
   {
     name: "Nike Air Force 1",
     description: "Clásicas, cómodas y versátiles, perfectas para tu estilo urbano.",
-    price: "107,95 € (-23%)",
+    price: "107,95 €",
+    originalPrice: "139,99 €",
+    discount: "-23%",
     img: "https://m.media-amazon.com/images/I/61ytHxggiRL._AC_SY695_.jpg",
     link: "https://www.amazon.es/dp/B09SWNGW4P?tag=alexpunzi-21",
     category: "zapatillas",
     rating: 5,
-    tag: "Oferta"
+    tag: "LIMITADO"
   },
   {
     name: "Adidas Essentials French Terry 3-Stripes Sweatshirt Hombre",
     description: "Sudadera cómoda y versátil con las clásicas 3 bandas de Adidas, ideal para uso diario.",
     price: "49,92 €",
+    originalPrice: "64,99 €",
+    discount: "-23%",
     img: "https://m.media-amazon.com/images/I/61kYeZLN4XL._AC_SX679_.jpg",
     link: "https://www.amazon.es/dp/B0BJ9KSZD2?tag=alexpunzi-21",
     category: "ropa",
     rating: 5,
+    tag: "OFERTA"
   },
   {
     name: "Casio Collection Reloj Analógico-Digital Hombre",
     description: "Reloj clásico analógico-digital, resistente y versátil, con estilo vintage y funcionalidad diaria.",
-    price: "39,79 € (-3%)",
+    price: "39,79 €",
+    originalPrice: "40,99 €",
+    discount: "-3%",
     img: "https://m.media-amazon.com/images/I/516JjHAaLOL._AC_SX679_.jpg",
     link: "https://www.amazon.es/dp/B000LCV6KK?tag=alexpunzi-21",
     category: "relojes",
     rating: 5,
-    tag: "Oferta"
+    tag: "CLÁSICO"
   },
   {
     name: "EASTPAK OUT OF OFFICE Mochila",
     description: "Mochila resistente y funcional, perfecta para trabajo, universidad o uso diario.",
-    price: "54,99 € (-15%)",
+    price: "54,99 €",
+    originalPrice: "64,99 €",
+    discount: "-15%",
     img: "https://m.media-amazon.com/images/I/81xiN1a9neL._AC_SY879_.jpg",
     link: "https://www.amazon.es/dp/B00O1XHJYW?tag=alexpunzi-21",
     category: "mochilas",
     rating: 5,
-    tag: "Oferta"
+    tag: "OFERTA"
   },
   {
     name: "Ray-Ban RB4340 Wayfarer",
     description: "Incluye estuche, lentes listas para prescripción, marco inspirado en el icónico Wayfarer con lentes de espejo degradado que aportan un estilo único.",
-    price: "130,14 € (-20%)",
+    price: "130,14 €",
+    originalPrice: "162,99 €",
+    discount: "-20%",
     img: "https://m.media-amazon.com/images/I/51UEa9pmh6L._AC_SX679_.jpg",
     link: "https://www.amazon.com/-/es/Ray-Ban-Rb4340-Wayfarer-Ease-cuadradas/dp/B071R57DZH?tag=alexpunzi-21",
     category: "accesorios",
     rating: 5,
-    tag: "Oferta"
+    tag: "EXCLUSIVO"
   },
   {
     name: "Clarks Emslie Warren Tacones Mujer",
     description: "Tacones de cuero Clarks para mujer, con plantilla Ortholite, amortiguación suave, tacón de 2,16 pulgadas y detalles de botones.",
-    price: "30,41 € (-58%)",
+    price: "30,41 €",
+    originalPrice: "71,99 €",
+    discount: "-58%",
     img: "https://m.media-amazon.com/images/I/713en8SpBlL._AC_SX575_.jpg",
     link: "https://www.amazon.com/-/es/Clarks-Tacones-Emslie-Warren-mujer/dp/B01N5ESUFU?tag=alexpunzi-21",
     category: "botines",
     rating: 5,
-    tag: "Oferta"
+    tag: "SUPER OFERTA"
   }
 ];
+
+// Actualizar contador de ofertas
+function updateOfferCounter(filter = "all") {
+  const count = filter === "all" 
+    ? products.length 
+    : products.filter(p => p.category === filter).length;
+  
+  document.getElementById("offer-count").textContent = 
+    `${count} ${count === 1 ? 'oferta disponible' : 'ofertas disponibles'}`;
+}
 
 // Render de productos con filtro
 function renderProducts(filter = "all") {
   const container = document.getElementById("product-container");
   container.innerHTML = "";
 
-  products
-    .filter(p => filter === "all" || p.category === filter)
-    .forEach(product => {
-      const card = document.createElement("div");
-      card.className = "product-card";
+  const filteredProducts = products.filter(p => filter === "all" || p.category === filter);
+  
+  filteredProducts.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-      card.innerHTML = `
-        ${product.tag ? `<span class="tag">${product.tag}</span>` : ""}
-        <img src="${product.img}" alt="${product.name}" loading="lazy">
-        <div class="product-content">
-          <h2>${product.name}</h2>
-          <p>${product.description}</p>
-          <p>Precio: <span class="price">${product.price}</span></p>
-          <p class="stars">${"⭐".repeat(product.rating)}${"☆".repeat(5 - product.rating)}</p>
-          <a href="${product.link}" target="_blank" rel="noopener noreferrer"
-             class="buy-btn" aria-label="Consultar ${product.name} en Amazon">
-             Ver oferta en Amazon
-          </a>
+    card.innerHTML = `
+      ${product.tag ? `<span class="tag">${product.tag}</span>` : ""}
+      <img src="${product.img}" alt="${product.name}" loading="lazy">
+      <div class="product-content">
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <div>
+          <span class="price">${product.price}</span>
+          ${product.originalPrice ? `<span class="original-price">${product.originalPrice}</span>` : ''}
+          <span style="color: #FF4444; font-weight: bold; margin-left: 10px;">${product.discount}</span>
         </div>
-      `;
+        <p class="stars">${"★".repeat(product.rating)}${"☆".repeat(5 - product.rating)}</p>
+        <a href="${product.link}" target="_blank" rel="noopener noreferrer"
+           class="buy-btn" aria-label="Consultar ${product.name} en Amazon">
+           Ver oferta en Amazon
+        </a>
+      </div>
+    `;
 
-      container.appendChild(card);
-    });
+    container.appendChild(card);
+  });
+
+  // Actualizar contador
+  updateOfferCounter(filter);
 
   // Animación progresiva
   const cards = document.querySelectorAll(".product-card");
@@ -384,14 +505,16 @@ function renderProducts(filter = "all") {
 }
 
 // Inicial
-renderProducts();
-
-// Filtro de categorías
-document.querySelectorAll(".filters button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProducts(btn.dataset.category);
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+  
+  // Filtro de categorías
+  document.querySelectorAll(".filters button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProducts(btn.dataset.category);
+    });
   });
 });
 </script>
